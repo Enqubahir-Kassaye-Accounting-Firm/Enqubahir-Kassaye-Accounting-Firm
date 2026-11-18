@@ -58,8 +58,8 @@ function GradientHero({ homePage }: HeroProps) {
       <section className="bg-brand-primary relative min-h-screen">
         <AnimatedGradientBackground />
         <Container className="relative z-10">
-          <div className="grid grid-cols-1 gap-12 pt-28 pb-16 lg:min-h-[100svh] lg:grid-cols-2 lg:items-center lg:gap-12 lg:pt-32 lg:pb-20">
-            <div className="flex min-h-[calc(100svh-7rem)] items-center lg:min-h-0">
+          <div className="grid grid-cols-1 gap-12 pt-24 pb-16 lg:min-h-[100svh] lg:grid-cols-2 lg:items-center lg:gap-12 lg:pt-32 lg:pb-20">
+            <div className="flex min-h-[calc(100svh-8rem)] items-center pb-24 md:pb-12 lg:min-h-0 lg:pb-0">
               <HeroText homePage={homePage} compact />
             </div>
             <HeroCard card={homePage.heroCard} step={homePage.heroTitleLines.length + 2} />
@@ -245,7 +245,7 @@ function HeroText({
             className={cn(
               'animate-fade-up text-on-primary block font-bold tracking-tight text-balance wrap-break-word hyphens-auto',
               compact
-                ? 'text-[clamp(2.5rem,11.5vw,3.5rem)] leading-[1.06] sm:text-5xl md:text-[3.5rem] lg:text-[3.25rem] xl:text-6xl 2xl:text-[4.25rem]'
+                ? 'text-[clamp(2.75rem,13.5vw,3.75rem)] leading-[1.04] sm:text-[3.5rem] md:text-[4.25rem] lg:text-[3.25rem] xl:text-6xl 2xl:text-[4.25rem]'
                 : [
                     'text-[clamp(2.75rem,13vw,4rem)] leading-[1.01] sm:text-[4.5rem] sm:leading-[1.05] md:text-[5.5rem] lg:text-[5.75rem] xl:text-[6.25rem] 2xl:text-[6.75rem]',
                     SHORT_SCREEN_TITLE,
@@ -292,7 +292,7 @@ function HeroText({
           href={primaryAction.href}
           external={primaryAction.external}
           variant="primary"
-          className="min-w-[160px] text-sm md:px-8 md:py-4 md:text-base"
+          className="w-full min-w-[160px] text-sm sm:w-auto md:px-8 md:py-4 md:text-base"
         >
           {primaryLabel}
         </PremiumButton>
@@ -302,7 +302,7 @@ function HeroText({
             href={secondary.href}
             external={secondary.external}
             variant="secondary"
-            className="min-w-[160px] text-sm md:px-8 md:py-4 md:text-base"
+            className="w-full min-w-[160px] text-sm sm:w-auto md:px-8 md:py-4 md:text-base"
           >
             {secondary.label}
           </PremiumButton>
