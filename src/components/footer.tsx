@@ -60,12 +60,12 @@ export function Footer() {
             }`}
           >
             {/* Brand */}
-            <div className="md:col-span-2 lg:col-span-1">
+            <div>
               <Link
                 href="/"
                 className="text-on-primary flex items-center gap-2 text-lg font-bold md:text-xl"
               >
-                <SiteLogo nameClassName="min-w-0 text-base wrap-break-word sm:whitespace-nowrap" />
+                <SiteLogo nameClassName="min-w-0 wrap-break-word" />
               </Link>
               <p className="text-text-inverse/80 mt-3 text-sm leading-relaxed md:mt-4">
                 {siteConfig.footer.description}

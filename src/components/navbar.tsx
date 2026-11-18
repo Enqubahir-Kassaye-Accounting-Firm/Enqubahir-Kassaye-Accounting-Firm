@@ -66,11 +66,11 @@ export function Navbar({ links: allNavLinks, tabletLinks: tabletNavLinks }: Navb
             href="/"
             title={siteConfig.name}
             className={cn(
-              'flex min-w-0 items-center gap-2.5 text-sm font-bold transition-colors lg:text-lg',
+              'flex min-w-0 items-center gap-2.5 font-bold transition-colors',
               'hover:text-brand-accent-text text-on-primary'
             )}
           >
-            <SiteLogo nameClassName="line-clamp-2 leading-tight lg:leading-normal" />
+            <SiteLogo nameClassName="truncate" />
           </Link>
 
           {/* Desktop Navigation - lg and up */}

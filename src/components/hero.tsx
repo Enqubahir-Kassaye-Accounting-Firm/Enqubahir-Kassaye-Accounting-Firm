@@ -51,6 +51,24 @@ export function Hero({
 }
 
 function GradientHero({ homePage }: HeroProps) {
+  // With a card: text first, centred in the first screen on phones (the card
+  // comes after it, below the fold); side by side from lg.
+  if (homePage.heroCard) {
+    return (
+      <section className="bg-brand-primary relative min-h-screen">
+        <AnimatedGradientBackground />
+        <Container className="relative z-10">
+          <div className="grid grid-cols-1 gap-12 pt-28 pb-16 lg:min-h-[100svh] lg:grid-cols-2 lg:items-center lg:gap-12 lg:pt-32 lg:pb-20">
+            <div className="flex min-h-[calc(100svh-7rem)] items-center lg:min-h-0">
+              <HeroText homePage={homePage} compact />
+            </div>
+            <HeroCard card={homePage.heroCard} step={homePage.heroTitleLines.length + 2} />
+          </div>
+        </Container>
+      </section>
+    );
+  }
+
   return (
     <section className="bg-brand-primary relative min-h-screen">
       {/* Animated Gradient Background */}
@@ -210,6 +228,15 @@ function HeroText({
         className
       )}
     >
+      {homePage.heroEyebrow && (
+        <p
+          style={fadeDelay(0)}
+          className="animate-fade-up text-brand-accent mb-4 text-xs font-semibold tracking-[0.2em] uppercase sm:mb-5 sm:text-sm"
+        >
+          {homePage.heroEyebrow}
+        </p>
+      )}
+
       {/* Title - 1 to 3 lines: editable via heroTitleLines */}
       <h1 className="w-full">
         {homePage.heroTitleLines.map((line, index) => (
@@ -218,7 +245,7 @@ function HeroText({
             className={cn(
               'animate-fade-up text-on-primary block font-bold tracking-tight text-balance wrap-break-word hyphens-auto',
               compact
-                ? 'text-[clamp(2.25rem,10vw,3rem)] leading-[1.08] sm:text-5xl md:text-[3.5rem] lg:text-[3.25rem] xl:text-6xl 2xl:text-[4.25rem]'
+                ? 'text-[clamp(2.5rem,11.5vw,3.5rem)] leading-[1.06] sm:text-5xl md:text-[3.5rem] lg:text-[3.25rem] xl:text-6xl 2xl:text-[4.25rem]'
                 : [
                     'text-[clamp(2.75rem,13vw,4rem)] leading-[1.01] sm:text-[4.5rem] sm:leading-[1.05] md:text-[5.5rem] lg:text-[5.75rem] xl:text-[6.25rem] 2xl:text-[6.75rem]',
                     SHORT_SCREEN_TITLE,
@@ -244,7 +271,8 @@ function HeroText({
         style={fadeDelay(homePage.heroTitleLines.length)}
         className={cn(
           'animate-fade-up mt-2 max-w-xl text-sm leading-relaxed sm:mt-3 sm:text-base md:text-lg lg:text-xl',
-          onPhoto ? 'text-on-primary' : 'text-text-inverse/65',
+          onPhoto ? 'text-on-primary' : compact ? 'text-text-inverse/80' : 'text-text-inverse/65',
+          compact && 'mt-5 text-base sm:mt-6 md:text-lg lg:text-lg xl:text-xl',
           centered && 'mx-auto'
         )}
       >
@@ -256,6 +284,7 @@ function HeroText({
         style={fadeDelay(homePage.heroTitleLines.length + 1)}
         className={cn(
           'animate-fade-up mt-4 flex w-full flex-col gap-3 sm:mt-5 sm:w-auto sm:flex-row sm:items-center md:mt-7 lg:mt-6 [@media(min-width:768px)_and_(max-height:850px)]:mt-4',
+          compact && 'mt-8 sm:mt-9 md:mt-9 lg:mt-9',
           centered && 'sm:justify-center'
         )}
       >

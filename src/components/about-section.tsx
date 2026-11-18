@@ -32,9 +32,9 @@ export function AboutSection({ about }: AboutSectionProps) {
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20 xl:gap-28">
           {/* Left: Text Content */}
-          <div className="min-w-0">
+          <div className="min-w-0 lg:max-w-xl">
             <SectionHeading
               reveal
               align="left"
@@ -55,7 +55,7 @@ export function AboutSection({ about }: AboutSectionProps) {
 
           {/* Right: at a glance */}
           {facts.length > 0 && (
-            <ScrollReveal delay={0.2} className="min-w-0">
+            <ScrollReveal delay={0.2} className="min-w-0 lg:max-w-lg lg:justify-self-end">
               <Card accent className="p-6 sm:p-8">
                 {factsTitle && (
                   <p className="text-brand-accent-text pl-2 text-xs font-semibold tracking-widest uppercase">

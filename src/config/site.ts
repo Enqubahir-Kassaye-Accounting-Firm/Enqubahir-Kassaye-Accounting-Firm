@@ -140,18 +140,20 @@ export const siteConfig = {
   // One source of truth for nav links across desktop, tablet, mobile and footer
   // (the footer lists the desktop links except Home).
   navigation: {
-    // The logo links home, so the wide desktop list has no Home link
+    // Every link goes to its section on the homepage; the section's own
+    // "See all" button opens the full page.
     desktop: [
-      { href: '/about', label: 'About' },
-      { href: '/services', label: 'Services', section: 'services' },
-      { href: '/accounting-tips', label: 'Accounting Tips', section: 'tips' },
-      { href: '/tax-filing-dos-and-donts', label: 'Do’s & Don’ts', section: 'tax-guide' },
-      { href: '/useful-websites', label: 'Websites', section: 'websites' },
+      { href: '/', label: 'Home' },
+      { href: '/#about', label: 'About', section: 'about' },
+      { href: '/#services', label: 'Services', section: 'services' },
+      { href: '/#tips', label: 'Accounting Tips', section: 'tips' },
+      { href: '/#tax-guide', label: 'Do’s & Don’ts', section: 'tax-guide' },
+      { href: '/#websites', label: 'Websites', section: 'websites' },
     ] as NavLink[],
     tablet: [
       { href: '/', label: 'Home' },
-      { href: '/about', label: 'About' },
-      { href: '/services', label: 'Services', section: 'services' },
+      { href: '/#about', label: 'About', section: 'about' },
+      { href: '/#services', label: 'Services', section: 'services' },
     ] as NavLink[],
     // The header button is the primary conversion action (see `conversion`)
   },
@@ -191,6 +193,10 @@ export const siteConfig = {
 
   // ── Brand Identity ──────────────────────────────────────────────────────────
   name: 'Enqubahir Kassaye Authorized Accounting Firm',
+  // Navbar and footer show the name in two lines: nameShort in bold, nameSub
+  // small in the accent color under it. Leave nameSub empty for one line.
+  nameShort: 'Enqubahir Kassaye',
+  nameSub: 'Authorized Accounting Firm',
   tagline: 'Accounting, tax and audit services in Addis Ababa',
   description:
     'An AABE-licensed accounting firm in Bole, Addis Ababa. We keep books, file taxes, carry out audits, prepare IFRS and IPSAS statements, run payroll and help with business registration.',

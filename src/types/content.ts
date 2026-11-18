@@ -96,6 +96,8 @@ export interface HeroCardContent {
 }
 
 export interface HomePage {
+  /** Small accent-colored line above the title (e.g. 'AABE-licensed accounting firm'); empty hides it */
+  heroEyebrow?: string;
   /** 1 to 3 lines; each line is shown on its own row */
   heroTitleLines: [string] | [string, string] | [string, string, string];
   heroSubtitle: string;

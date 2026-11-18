@@ -6,9 +6,11 @@
 import type { HomePage } from '@/types/content';
 
 export const HOME_PAGE: HomePage = {
+  heroEyebrow: 'AABE-licensed accounting firm',
   // *Starred* words use the accent color
   heroTitleLines: ['Your books ready *before* the tax office asks.'],
-  heroSubtitle: 'Accounting, tax and audit services in Addis Ababa',
+  heroSubtitle:
+    'Monthly bookkeeping, VAT, withholding and employee income tax filing, and audit preparation for businesses in Addis Ababa.',
   heroPrimaryButtonText: 'Book a free consultation',
   heroSecondaryButtonText: 'Our Services',
   heroSecondaryButtonUrl: '/#services',
