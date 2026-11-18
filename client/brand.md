@@ -1,7 +1,7 @@
 | Muted text | #5F5F5F | #A3A3A3 || Body text | #404040 | #D4D4D4 || Heading | #173F2E | #FFFFFF || Border | #E5E5E5 | #262626 || Card | #F7F7F7 | #171717 || Section background | #FFFFFF | #0A0A0A || Page background | #FFFFFF | #0A0A0A |Business name: Enqubahir Kassaye Authorized Accounting Firm
 Descriptor: Accounting, tax and audit preparation in Addis Ababa
 Date: November 18, 2026
-Logo file: none
+Logo file: public/logo.png (original client/logo.webp). White tile on the dark green navbar, footer and favicon; the favicon crops the empty margin.
 Heading color: #173F2E
 Line color: #8A6618
 Text color: #2A3340

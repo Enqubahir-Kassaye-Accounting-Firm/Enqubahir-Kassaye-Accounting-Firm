@@ -11,9 +11,9 @@ finished (`- [x] … — YYYY-MM-DD`) and rewrites Current state.
 ## Current state
 
 - **Stage:** 1. Prepare
-- **Last done:** Version 1 built locally (setup, content, 5 custom items), checks run — 2026-11-18
-- **Next task:** create the empty private GitHub repository and safe-push; then the click-through and Vercel preview (task 4)
-- **Waiting on:** Biniam (GitHub repository link)
+- **Last done:** Version 1 polished (logo, favicon, two-line name, hero card, contact form with email fallback, share image) and pushed to GitHub — 2026-11-18
+- **Next task:** Vercel preview and click-through (task 4), then send the link
+- **Waiting on:** nothing from the client; Biniam to approve the Vercel preview
 - **Blockers:** none. Tasks 0 and 1 stay unticked: surprise build, no agreement or kickoff yet.
 
 ## Project
@@ -75,7 +75,7 @@ A ticked line is never generated again, so the client's corrections are safe.
 - [x] Fonts pinned and files formatted — 2026-11-18
 - [x] Checks pass — 2026-11-18
 - [x] `docs/ask-client.md` saved — 2026-11-18
-- [ ] Pushed and reported
+- [x] Pushed and reported — 2026-11-18
 
 ## Messages
 
@@ -118,9 +118,11 @@ Surprise build: shown to the client on a Vercel link before kickoff, no quote re
 Anything agreed that the Blueprint or package does not show (extra work quoted,
 a declined request, a value outside an allowed list).
 
-| Date | Decision | Reason |
-| ---- | -------- | ------ |
-|      |          |        |
+| Date       | Decision                                                                                                         | Reason                                                                                        |
+| ---------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 2026-11-18 | Contact form shows without a Web3Forms key; sending opens the visitor's email app addressed to the company email | Biniam wants the form visible in the surprise build; real delivery needs the client's own key |
+| 2026-11-18 | Navbar links go to homepage sections; each section's button opens the full page                                  | Biniam's direction                                                                            |
+| 2026-11-18 | Hero headline, card and two-line logo name follow Biniam's mockups                                               | Biniam's direction; wording to confirm with the client                                        |
 
 ## Handoff record
 
