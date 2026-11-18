@@ -1,0 +1,30 @@
+# Code health on every push and pull request: types, lint, formatting, brand
+# contrast, content, and the static export. Client repositories cloned from the
+# template run it too. `check:placeholders` is not here: it fails until the
+# client approves the legal wording, so it stays a launch check
+# (docs/checklist-launch.md).
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # check:contrast and check:content load .ts files directly (Node ≥ 22.18)
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run check:contrast
+      - run: npm run check:content
+      - run: npm run build:static

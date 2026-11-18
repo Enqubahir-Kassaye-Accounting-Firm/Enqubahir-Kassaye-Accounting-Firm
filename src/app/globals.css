@@ -1,0 +1,344 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens
+ * Brand values (--brand-*, --btn-*, --section-scale, --brand-font-*) and the
+ * surface/text colors (--surface-*, --text-*; light on :root, dark on
+ * html.dark) are set in src/app/layout.tsx from the style preset in
+ * src/config/site.ts. Do not set brand or surface values here; change the
+ * preset or its overrides instead.
+ */
+@theme inline {
+  /* Surfaces and text follow the theme on their own — no dark: variant needed.
+     bg-surface-page, bg-surface-section, bg-surface-card, border-border-default,
+     text-text-heading, text-text-body, text-text-muted */
+  --color-surface-page: var(--surface-page);
+  --color-surface-section: var(--surface-section);
+  --color-surface-card: var(--surface-card);
+  --color-border-default: var(--surface-border);
+  --color-text-heading: var(--text-heading);
+  --color-text-body: var(--text-body);
+  --color-text-muted: var(--text-muted);
+
+  --font-sans: var(--brand-font-body), var(--brand-font-ethiopic), system-ui, sans-serif;
+  --font-heading: var(--brand-font-heading), var(--brand-font-ethiopic), system-ui, sans-serif;
+
+  /* Accent as text (text-brand-accent-text): darkened on light surfaces,
+     the accent itself on dark ones. Inline so section overrides apply. */
+  --color-brand-accent-text: var(--brand-accent-text);
+
+  /* Corner radius: every rounded-md…2xl class scales from one value */
+  --radius-md: calc(var(--brand-radius) * 0.75);
+  --radius-lg: var(--brand-radius);
+  --radius-xl: calc(var(--brand-radius) * 1.5);
+  --radius-2xl: calc(var(--brand-radius) * 2);
+
+  /* Buttons: rounded-button px-btn-x py-btn-y text-btn */
+  --radius-button: var(--btn-radius);
+  --spacing-btn-x: var(--btn-px);
+  --spacing-btn-y: var(--btn-py);
+  --text-btn: var(--btn-text);
+}
+
+@theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-dark: var(--brand-primary-dark);
+  --color-brand-primary-light: var(--brand-primary-light);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-dark: var(--brand-accent-dark);
+
+  /* Text on brand-primary areas (hero, navbar, page headers, CTA, footer):
+     text-on-primary for headings and icons, text-text-inverse (slightly
+     softer) for body text. Both follow brand.colors.onPrimary. */
+  --color-on-primary: var(--brand-on-primary);
+  --color-text-inverse: color-mix(in srgb, var(--brand-on-primary) 90%, var(--brand-primary));
+  /* Text on brand-accent buttons */
+  --color-text-on-accent: var(--brand-on-accent);
+}
+
+/* Section vertical spacing, scaled by the preset's sectionSpacing */
+@utility section-y {
+  padding-block: calc(5rem * var(--section-scale));
+  @media (width >= 48rem) {
+    padding-block: calc(7rem * var(--section-scale));
+  }
+  @media (width >= 64rem) {
+    padding-block: calc(8rem * var(--section-scale));
+  }
+}
+
+@utility section-y-sm {
+  padding-block: calc(4rem * var(--section-scale));
+  @media (width >= 48rem) {
+    padding-block: calc(5rem * var(--section-scale));
+  }
+}
+
+@utility page-header-y {
+  padding-block: calc(5rem * var(--section-scale));
+  @media (width >= 48rem) {
+    padding-block: calc(6rem * var(--section-scale));
+  }
+}
+
+/* On dark surfaces the accent itself is readable as text */
+html.dark,
+.bg-brand-primary,
+.bg-brand-primary-dark,
+.bg-brand-primary\/95,
+.from-brand-primary,
+.from-brand-primary\/80 {
+  --brand-accent-text: var(--brand-accent);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--brand-font-body), var(--brand-font-ethiopic), system-ui, sans-serif;
+}
+
+body {
+  background: var(--surface-page);
+  color: var(--text-body);
+}
+
+/* Keyboard focus: one solid outline for every link, button and field. The
+   readable accent is ≥ 3:1 on light, dark and primary surfaces
+   (check:contrast). Unlayered, so it wins over utility classes. */
+:focus-visible {
+  outline: 2px solid var(--brand-accent-text);
+  outline-offset: 2px;
+}
+
+/* The header is transparent over the primary-colored hero and page headers
+   until scrolled, so it uses the accent itself, like other primary areas */
+.site-header :focus-visible {
+  outline-color: var(--brand-accent);
+}
+
+/* Headings use the preset's heading font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--brand-font-heading), var(--brand-font-ethiopic), system-ui, sans-serif;
+}
+
+/* Long client words (names, emails, compound words) break instead of
+   overflowing their box; in the base layer so utilities can still override */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  dd,
+  blockquote {
+    overflow-wrap: break-word;
+  }
+}
+
+.PhoneInput {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.PhoneInputCountry {
+  display: flex;
+  align-items: center;
+}
+
+.PhoneInputInput {
+  width: 100%;
+  border-radius: var(--brand-radius);
+  border: 1px solid var(--surface-border);
+  background: var(--surface-page);
+  padding: 0.75rem 1rem;
+  color: inherit;
+}
+
+/* The whole phone field (country and number) shows the focus outline */
+.PhoneInputInput:focus {
+  outline: none;
+}
+
+.PhoneInput:focus-within {
+  outline: 2px solid var(--brand-accent-text);
+  outline-offset: 2px;
+}
+
+/* Country dropdown select — surface tokens, so it follows the theme */
+.PhoneInputCountrySelect,
+select.PhoneInputCountrySelect {
+  background: var(--surface-card) !important;
+  color: var(--text-body) !important;
+  border: 1px solid var(--surface-border) !important;
+  border-radius: var(--brand-radius);
+  padding: 0.5rem;
+}
+
+.PhoneInputCountrySelect option,
+select.PhoneInputCountrySelect option {
+  background: var(--surface-card) !important;
+  color: var(--text-body) !important;
+  padding: 0.5rem;
+}
+
+/* Target the dropdown menu/popup that appears */
+.PhoneInputCountrySelect::-ms-expand {
+  display: none;
+}
+
+/* Smooth scroll offset for sticky navbar */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/*
+ * Motion — CSS only (no animation library).
+ * Everything here is switched off for prefers-reduced-motion.
+ */
+/* --fade-from: 1 keeps an element visible while it rises (hero title, so it
+   counts as the page's main content from the first paint) */
+@keyframes fade-up {
+  from {
+    opacity: var(--fade-from, 0);
+    transform: translateY(var(--fade-distance, 30px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drift-a {
+  50% {
+    transform: translate(100px, 50px) scale(1.1);
+  }
+}
+
+@keyframes drift-b {
+  50% {
+    transform: translate(-80px, -60px) scale(1.15);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Soft accent glow. A radial gradient instead of blur-3xl: a large blur is
+   redrawn on every frame while it animates, which makes scrolling stutter */
+@utility glow-accent {
+  background: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--brand-accent) 10%, transparent) 40%,
+    transparent
+  );
+}
+
+/* Page transition (src/components/page-transition.tsx). Fill "backwards" only, so no
+   transform is left behind to break sticky elements such as the legal index */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@utility animate-page-enter {
+  animation: page-enter 0.35s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* On-load entrance; set --fade-delay inline for a sequence */
+@utility animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: var(--fade-delay, 0s);
+}
+
+@utility animate-drift-a {
+  animation: drift-a 20s ease-in-out infinite;
+}
+
+@utility animate-drift-b {
+  animation: drift-b 25s ease-in-out infinite;
+}
+
+@utility animate-glow-pulse {
+  animation: glow-pulse 8s ease-in-out infinite;
+}
+
+/*
+ * Scroll reveal: <ScrollReveal> / <StaggerItem> render [data-reveal];
+ * <RevealObserver> adds .is-revealed when they enter the viewport.
+ * Content is only hidden once the head script has set .reveal-ready, so it
+ * stays visible without JavaScript.
+ */
+/* Short distance and a strong ease-out (fast start, long settle): content is
+   readable almost at once and glides into place */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance, 24px));
+  transition:
+    opacity var(--reveal-duration, 0.6s) cubic-bezier(0.22, 1, 0.36, 1),
+    transform var(--reveal-duration, 0.6s) cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger: children of [data-stagger] reveal one after another (--stagger per step) */
+[data-stagger] > [data-reveal] {
+  --reveal-distance: 16px;
+  --reveal-duration: 0.5s;
+  --reveal-delay: calc(0.05s + var(--stagger, 0.1s) * var(--stagger-index, 0));
+}
+[data-stagger] > :nth-child(2) {
+  --stagger-index: 1;
+}
+[data-stagger] > :nth-child(3) {
+  --stagger-index: 2;
+}
+[data-stagger] > :nth-child(4) {
+  --stagger-index: 3;
+}
+[data-stagger] > :nth-child(5) {
+  --stagger-index: 4;
+}
+[data-stagger] > :nth-child(6) {
+  --stagger-index: 5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-fade-up,
+  .animate-page-enter,
+  .animate-drift-a,
+  .animate-drift-b,
+  .animate-glow-pulse {
+    animation: none;
+  }
+}

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enqubahir Top 3 Looks</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@500;600;700&family=Manrope:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#1d232b; --muted:#5d6672; --line:#e3e0d9; --bg:#fbfaf7; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.55 Inter, Arial, sans-serif; }
+  .wrap { max-width:1180px; margin:0 auto; padding:32px 16px 80px; }
+  h1 { font:800 30px/1.2 Inter; margin:0 0 6px; letter-spacing:-.3px; }
+  h2 { font:700 20px/1.3 Inter; margin:36px 0 10px; }
+  .lead { color:var(--muted); max-width:780px; margin:0 0 8px; }
+  .box { background:#fff; border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
+  .rank { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+  .rank .box b { font-size:16px; }
+  .chips { display:flex; gap:6px; margin:8px 0; }
+  .chip { width:40px; height:28px; border-radius:4px; border:1px solid rgba(0,0,0,.1); }
+  .eden { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .eden .mini { background:#1B2A44; color:#fff; padding:14px 18px; border-radius:8px; font:600 20px Lora; }
+  .eden .mini span { display:inline-block; margin-top:8px; background:#C9A25E; color:#1B2A44; font:600 12px 'DM Sans'; padding:6px 10px; border-radius:4px; }
+
+  .look { margin-top:44px; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#fff; }
+  .look-head { padding:16px 20px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline; border-bottom:1px solid var(--line); }
+  .look-head h3 { margin:0; font:800 20px Inter; }
+  .look-head .sub { color:var(--muted); font-size:14px; }
+  .pill { font:700 12px Inter; padding:4px 10px; border-radius:20px; }
+
+  /* shared hero parts */
+  .hero { padding:0 0 46px; }
+  .nav { display:flex; justify-content:space-between; align-items:center; padding:18px 32px; gap:12px; }
+  .brand { line-height:1.1; display:flex; align-items:center; gap:10px; }
+  .mark { width:34px; height:34px; border-radius:7px; display:flex; align-items:center; justify-content:center; font:800 15px Inter; }
+  .brand b { font-family:var(--hf); font-weight:700; font-size:19px; }
+  .brand small { display:block; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase; margin-top:3px; opacity:.75; }
+  .links { display:flex; gap:22px; font-size:14px; }
+  .btn { display:inline-block; font:600 14px Inter; padding:11px 18px; border-radius:6px; text-decoration:none; white-space:nowrap; }
+  .hero-body { display:grid; grid-template-columns:1.2fr .95fr; gap:40px; padding:36px 32px 0; align-items:center; }
+  .eyebrow { font:700 12px Inter; letter-spacing:1.6px; text-transform:uppercase; margin-bottom:14px; }
+  .hero h4 { font-family:var(--hf); font-weight:var(--hw); font-size:46px; line-height:1.1; margin:0 0 18px; letter-spacing:var(--ls); }
+  .hero p { font-size:16.5px; margin:0 0 26px; max-width:520px; }
+  .ctas { display:flex; gap:12px; flex-wrap:wrap; }
+  .meta { margin-top:22px; font-size:13px; display:flex; gap:18px; flex-wrap:wrap; }
+  .card { border-radius:10px; padding:20px; }
+  .card .t { font:700 12px Inter; text-transform:uppercase; letter-spacing:1.3px; margin-bottom:10px; }
+  .row { display:flex; justify-content:space-between; align-items:center; padding:11px 0; border-bottom:1px solid; font-size:14.5px; gap:10px; }
+  .row:last-child { border-bottom:0; }
+  .tick { width:22px; height:22px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; flex:none; }
+  .pend { width:22px; height:22px; border-radius:50%; border:2px solid #cfc9bc; flex:none; }
+
+  .strip { display:grid; grid-template-columns:repeat(3,1fr); }
+  .strip > div { padding:22px 26px; }
+  .strip h5 { font-family:var(--hf); font-weight:var(--hw); font-size:19px; margin:0 0 6px; letter-spacing:var(--ls); }
+  .strip p { margin:0 0 10px; font-size:14px; }
+  .strip a { font-weight:700; font-size:13.5px; text-decoration:none; }
+  .darkrow { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 32px; flex-wrap:wrap; }
+  .darkrow h5 { font-family:var(--hf); font-weight:var(--hw); font-size:22px; margin:0; letter-spacing:var(--ls); }
+  .darkrow p { margin:4px 0 0; font-size:14px; }
+  .lbl { font:700 10.5px Inter; letter-spacing:1.4px; text-transform:uppercase; opacity:.6; margin-bottom:6px; }
+
+  .details { display:grid; grid-template-columns:1fr 1.25fr; gap:26px; padding:20px; border-top:1px solid var(--line); }
+  .sw { display:flex; gap:8px; flex-wrap:wrap; }
+  .sw div { width:96px; font-size:12px; color:var(--muted); }
+  .sw i { display:block; height:50px; border-radius:6px; border:1px solid rgba(0,0,0,.08); margin-bottom:5px; }
+  .sw b { display:block; color:var(--ink); font-size:12.5px; }
+  .fonts { margin-top:12px; font-size:13px; color:var(--muted); }
+  .contrast { font-size:13px; margin-top:12px; }
+  .contrast div { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px dashed var(--line); }
+  .ok { color:#137333; font-weight:600; } .bad { color:#b3261e; font-weight:600; }
+  .verdict h6 { font:700 13px Inter; margin:0 0 4px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); }
+  .verdict p { margin:0 0 12px; font-size:14px; }
+  .verdict ul { margin:0 0 12px; padding-left:18px; font-size:14px; } .verdict li { margin-bottom:5px; }
+
+  @media (max-width:860px) {
+    .hero-body, .details, .strip { grid-template-columns:1fr; }
+    .links { display:none; } .hero h4 { font-size:33px; }
+    .nav, .hero-body, .darkrow { padding-left:18px; padding-right:18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Enqubahir Kassaye: top 3 looks</h1>
+  <p class="lead">Three complete directions, not just color swaps. Each has its own color, heading font and hero layout. The text comes from his current website, and the headline is a draft. Contrast is calculated live on this page.</p>
+
+  <h2>My ranking, and how sure I am</h2>
+  <div class="rank">
+    <div class="box"><b>1. Ledger Green</b><div class="chips"><span class="chip" style="background:#173F2E"></span><span class="chip" style="background:#D9AE55"></span><span class="chip" style="background:#F6F4EE"></span></div>Best fit for an accountant, and unlike anyone in Addis or your portfolio. About 60/40 over Navy, not certain.</div>
+    <div class="box"><b>2. Ledger Navy</b><div class="chips"><span class="chip" style="background:#0A2D55"></span><span class="chip" style="background:#E0A33A"></span><span class="chip" style="background:#F8F6F1"></span></div>Correct and safe. Its weakness is not the client; it is that it is almost Eden’s site.</div>
+    <div class="box"><b>3. Paper &amp; Tick</b><div class="chips"><span class="chip" style="background:#FFFFFF"></span><span class="chip" style="background:#16201C"></span><span class="chip" style="background:#1F7A45"></span></div>Most modern and clearest. Risk: may feel too light for an owner who expects “serious”.</div>
+  </div>
+
+  <h2>Your Eden site, measured</h2>
+  <div class="box eden">
+    <div class="mini">Eden Wendmnew<br><span>Book a consultation</span></div>
+    <div>Navy <b>#1B2A44</b>, gold <b>#C9A25E</b>, Lora headings, DM Sans body.<br>Look 2 below (Navy #0A2D55 + Amber #E0A33A + Lora) would sit very close to it.</div>
+  </div>
+
+  <div id="looks"></div>
+</div>
+
+<script>
+const LOOKS = [
+ { name:'Look 1 · Ledger Green', sub:'Deep green + brass · Manrope headings · dark hero', pill:['#e6f4ea','#14532d','My pick'],
+   mode:'dark', hf:'Manrope, Arial, sans-serif', hw:800, ls:'-0.8px',
+   heroBg:'#173F2E', heroText:'#FFFFFF', soft:'#CFDCD3', eyebrow:'#D9AE55', em:'#D9AE55',
+   btnBg:'#D9AE55', btnText:'#1A1608', ghost:'rgba(255,255,255,.45)', markBg:'#D9AE55', markText:'#173F2E',
+   cardBg:'#FFFFFF', cardText:'#1d232b', cardLine:'#ECE8DF', cardT:'#5d6672', tickBg:'#173F2E', tickText:'#D9AE55',
+   paper:'#F6F4EE', sectionHead:'#173F2E', link:'#8A6618', body:'#2A3340',
+   dark:'#0E1A14', darkHead:'#F1EEE4', darkBody:'#C6D1CA',
+   sw:[['Ledger Green','#173F2E'],['Brass','#D9AE55'],['Deep Brass','#8A6618'],['Paper','#F6F4EE'],['Night','#0E1A14']],
+   fonts:'Headings: Manrope ExtraBold, tight. Body: Inter.',
+   why:'Green is the colour of money and of the balanced ledger, and his own mark is a green tick: “checked, filed, done”. No Addis rival measured uses green as the main colour, and it clearly separates him from Eden. A sans heading reads exact and practical rather than wealthy.',
+   pros:['Says “accountant” before a word is read.','Distinct from Parity, HLB, Dessalegn and Eden.','Brass used only on buttons and ticks keeps it practical.'],
+   cons:['Leaves his current navy, so the first “this is mine” moment depends on his name and services, not the colour.','Too much brass would tip it into “bank” or “investment house”.'] },
+ { name:'Look 2 · Ledger Navy', sub:'Navy + amber · Lora headings · dark hero', pill:['#fdf3e1','#7a4b06','Safe'],
+   mode:'dark', hf:'Lora, Georgia, serif', hw:600, ls:'0',
+   heroBg:'#0A2D55', heroText:'#FFFFFF', soft:'#C9D3E0', eyebrow:'#E0A33A', em:'#E0A33A',
+   btnBg:'#E0A33A', btnText:'#10213A', ghost:'rgba(255,255,255,.45)', markBg:'#E0A33A', markText:'#0A2D55',
+   cardBg:'#FFFFFF', cardText:'#1d232b', cardLine:'#ECE8DF', cardT:'#5d6672', tickBg:'#E0A33A', tickText:'#10213A',
+   paper:'#F8F6F1', sectionHead:'#0A2D55', link:'#8A5E14', body:'#2A3340',
+   dark:'#0B1726', darkHead:'#F3F0E8', darkBody:'#D5DAE2',
+   sw:[['Ledger Navy','#0A2D55'],['Amber','#E0A33A'],['Deep Amber','#8A5E14'],['Paper','#F8F6F1'],['Night','#0B1726']],
+   fonts:'Headings: Lora SemiBold. Body: Inter.',
+   why:'Keeps the navy already on his logo and flyer, and amber replaces his red without the “loss” meaning. Every test passes. It is the choice least likely to be wrong for him.',
+   pros:['Feels continuous with what he uses today.','Reads formal and trustworthy to any buyer.'],
+   cons:['Nearly the same as your Eden site (navy, gold, Lora). Side by side in your portfolio they look like one template.','Navy says “authority”, which is the lawyer’s message more than the accountant’s.'] },
+ { name:'Look 3 · Paper & Tick', sub:'White + ink + tick green · Inter headings · light hero', pill:['#eef1f6','#334','Modern'],
+   mode:'light', hf:'Inter, Arial, sans-serif', hw:800, ls:'-1.2px',
+   heroBg:'#FFFFFF', heroText:'#16201C', soft:'#4A5550', eyebrow:'#1F7A45', em:'#1F7A45',
+   btnBg:'#1F7A45', btnText:'#FFFFFF', ghost:'#C9CFCB', ghostText:'#16201C', markBg:'#16201C', markText:'#FFFFFF',
+   cardBg:'#16201C', cardText:'#F2F4F1', cardLine:'#2C3833', cardT:'#9DB0A6', tickBg:'#3DB36B', tickText:'#0B1A12',
+   paper:'#F3F4F1', sectionHead:'#16201C', link:'#1F7A45', body:'#2E3833',
+   dark:'#0F1513', darkHead:'#F2F4F1', darkBody:'#C4CEC8', darkAccent:'#3DB36B', darkBtnText:'#0B1A12',
+   sw:[['Ink','#16201C'],['Tick Green','#1F7A45'],['Bright Tick','#3DB36B'],['Paper','#F3F4F1'],['White','#FFFFFF']],
+   fonts:'Headings: Inter ExtraBold, tight. Body: Inter.',
+   why:'Built like a clean ledger page: white space, black ink, and green only where something is done. It is the most honest look for a one-principal practice and the clearest on phones.',
+   pros:['Very readable; numbers and deadlines stand out.','Nothing like any rival or your other sites.'],
+   cons:['Light and plain; an owner who expects a “serious firm” look may find it too simple.','Relies on good photos later to feel warm.'] },
+];
+
+function lum(h){return [1,3,5].map(i=>{let v=parseInt(h.slice(i,i+2),16)/255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4}).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0)}
+function ratio(a,b){const [x,y]=[lum(a),lum(b)].sort((m,n)=>n-m);return (x+.05)/(y+.05)}
+function chk(label,fg,bg,min){const r=ratio(fg,bg);return `<div><span>${label}</span><span class="${r>=min?'ok':'bad'}">${r.toFixed(1)} ${r>=min?'pass':'fail'} (min ${min})</span></div>`}
+
+const host=document.getElementById('looks');
+LOOKS.forEach(L=>{
+  const s=document.createElement('section'); s.className='look';
+  s.style.cssText=`--hf:${L.hf};--hw:${L.hw};--ls:${L.ls}`;
+  const ghostText=L.ghostText||'#FFFFFF';
+  const dAcc=L.darkAccent||L.btnBg, dBtn=L.darkBtnText||L.btnText;
+  s.innerHTML=`
+  <div class="look-head"><div><h3>${L.name}</h3><div class="sub">${L.sub}</div></div><span class="pill" style="background:${L.pill[0]};color:${L.pill[1]}">${L.pill[2]}</span></div>
+  <div class="hero" style="background:${L.heroBg};color:${L.heroText};${L.mode==='light'?'border-bottom:1px solid #E4E7E3':''}">
+    <div class="nav" style="${L.mode==='light'?'border-bottom:1px solid #EEF0ED':''}">
+      <div class="brand"><span class="mark" style="background:${L.markBg};color:${L.markText}">EK</span><div><b>Enqubahir Kassaye</b><small>Authorized Accounting Firm</small></div></div>
+      <div class="links" style="color:${L.soft}"><span>Services</span><span>Tax tips</span><span>About</span><span>Contact</span></div>
+      <a class="btn" style="background:${L.btnBg};color:${L.btnText}">Free consultation</a>
+    </div>
+    <div class="hero-body">
+      <div>
+        <div class="eyebrow" style="color:${L.eyebrow}">AABE registered · ACF01585</div>
+        <h4>Your books ready <span style="color:${L.em}">before</span> the tax office asks.</h4>
+        <p style="color:${L.soft}">Monthly bookkeeping, VAT, withholding and PAYE filing, and audit preparation for businesses in Addis Ababa.</p>
+        <div class="ctas"><a class="btn" style="background:${L.btnBg};color:${L.btnText}">Book a free consultation</a><a class="btn" style="border:1.5px solid ${L.ghost};color:${ghostText}">Call 0911 475 606</a></div>
+        <div class="meta" style="color:${L.soft}"><span>22 Mazoria, Bole</span><span>Mon–Fri 8:00–6:00 · Sat 8:00–12:00</span></div>
+      </div>
+      <div class="card" style="background:${L.cardBg};color:${L.cardText};box-shadow:${L.mode==='dark'?'0 14px 34px rgba(0,0,0,.28)':'0 14px 34px rgba(22,32,28,.18)'}">
+        <div class="t" style="color:${L.cardT}">Monthly filing</div>
+        ${['VAT declaration','Withholding tax','Employee income tax (PAYE)'].map(t=>`<div class="row" style="border-color:${L.cardLine}">${t}<span class="tick" style="background:${L.tickBg};color:${L.tickText}">✓</span></div>`).join('')}
+        <div class="row" style="border-color:${L.cardLine}">Financial statements (IFRS)<span class="pend"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="strip" style="background:${L.paper};color:${L.body}">
+    ${[['Accounting & bookkeeping','Ledgers kept monthly and statements prepared to IFRS.'],['Tax consultancy','Company income tax, VAT, withholding and PAYE, filed on time.'],['Audit preparation','Backlogs cleaned up before the auditor arrives.']].map(x=>`<div><h5 style="color:${L.sectionHead}">${x[0]}</h5><p>${x[1]}</p><a style="color:${L.link}">Learn more →</a></div>`).join('')}
+  </div>
+  <div class="darkrow" style="background:${L.dark};color:${L.darkBody}">
+    <div><div class="lbl">Dark mode</div><h5 style="color:${L.darkHead}">Talk to Enqubahir directly.</h5><p>Free first consultation, in person or by phone.</p></div>
+    <a class="btn" style="background:${dAcc};color:${dBtn}">Book a free consultation</a>
+  </div>
+  <div class="details">
+    <div>
+      <div class="sw">${L.sw.map(c=>`<div><i style="background:${c[1]}"></i><b>${c[0]}</b>${c[1]}</div>`).join('')}</div>
+      <div class="fonts">${L.fonts}</div>
+      <div class="contrast">
+        ${chk('Hero headline on hero',L.heroText,L.heroBg,4.5)}
+        ${chk('Hero body text on hero',L.soft,L.heroBg,4.5)}
+        ${chk('Button text on button',L.btnText,L.btnBg,4.5)}
+        ${chk('Button on hero',L.btnBg,L.heroBg,3)}
+        ${chk('Section heading on paper',L.sectionHead,L.paper,4.5)}
+        ${chk('Link on paper',L.link,L.paper,4.5)}
+        ${chk('Dark mode body text',L.darkBody,L.dark,4.5)}
+        ${chk('Dark mode button',dAcc,L.dark,3)}
+      </div>
+    </div>
+    <div class="verdict">
+      <h6>Why this look</h6><p>${L.why}</p>
+      <h6>Strengths</h6><ul>${L.pros.map(t=>`<li>${t}</li>`).join('')}</ul>
+      <h6>Risks</h6><ul>${L.cons.map(t=>`<li>${t}</li>`).join('')}</ul>
+    </div>
+  </div>`;
+  host.appendChild(s);
+});
+</script>
+</body>
+</html>
