@@ -36,11 +36,15 @@ async function imageOptions() {
   };
 }
 
-/** Square icon: the logo centered on the primary color. */
+/**
+ * Square icon. The logo file has empty margin around the mark, so it is drawn
+ * larger than the icon and cropped, on white, so the mark fills the tab icon.
+ * With no logo: the first letter on the primary color.
+ */
 export async function iconResponse(size: number, radius: number): Promise<ImageResponse> {
   const logo = await logoDataUrl();
   const options = await imageOptions();
-  const logoSize = Math.round(size * 0.72);
+  const logoSize = Math.round(size * 1.22);
 
   return new ImageResponse(
     <div
@@ -50,8 +54,9 @@ export async function iconResponse(size: number, radius: number): Promise<ImageR
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: colors.primary,
+        background: logo ? '#ffffff' : colors.primary,
         borderRadius: radius,
+        overflow: 'hidden',
       }}
     >
       {logo ? (

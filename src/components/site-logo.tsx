@@ -42,7 +42,7 @@ export function SiteLogo({ nameClassName }: { nameClassName?: string }) {
       {siteConfig.nameShort && siteConfig.nameSub ? (
         <span className="min-w-0 leading-tight">
           <span className="block truncate text-lg font-bold">{siteConfig.nameShort}</span>
-          <span className="text-brand-accent-text mt-0.5 block text-[0.6rem] font-semibold tracking-[0.14em] uppercase sm:text-[0.68rem] sm:tracking-[0.18em]">
+          <span className="text-brand-accent mt-0.5 block text-[0.6rem] font-semibold tracking-[0.14em] uppercase sm:text-[0.68rem] sm:tracking-[0.18em]">
             {siteConfig.nameSub}
           </span>
         </span>
