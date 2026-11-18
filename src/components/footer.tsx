@@ -177,7 +177,9 @@ export function Footer() {
                 </>
               )}
             </div>
-            <p>{copyrightText}</p>
+            <p className="text-[clamp(0.55rem,2.8vw,0.75rem)] whitespace-nowrap md:text-xs lg:text-sm">
+              {copyrightText}
+            </p>
             <div className="flex justify-center gap-4 md:justify-end md:gap-6">
               {footerLinks.legal.map((link) => (
                 <Link
