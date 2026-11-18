@@ -16,6 +16,38 @@ export const UI_TEXT = {
     projects: 'Portfolio',
     testimonials: 'Testimonials',
     contact: 'Contact Us',
+    taxGuide: 'Tax Filing',
+    tips: 'Accounting Tips',
+    websites: 'Useful Websites',
+  },
+
+  tips: {
+    seeAll: 'See all tips',
+    whyLabel: 'Why',
+    howLabel: 'How',
+  },
+
+  taxGuide: {
+    seeAll: 'See all do’s and don’ts',
+    dosTitle: 'Do this',
+    dontsTitle: 'Do not do this',
+  },
+
+  websites: {
+    seeAll: 'See all websites',
+    visit: 'Visit website',
+    opensInNewTab: '(opens in a new tab)',
+  },
+
+  testimonials: {
+    carouselLabel: 'Client testimonials',
+    counterLabel: 'Testimonial',
+    of: 'of',
+    pause: 'Pause the testimonials',
+    play: 'Play the testimonials',
+    previous: 'Previous testimonial',
+    next: 'Next testimonial',
+    selectorLabel: 'Show testimonial from',
   },
 
   services: {
@@ -53,7 +85,7 @@ export const UI_TEXT = {
 
   /** Button labels for the actions in site.ts → conversion (hero, CTA, header) */
   conversion: {
-    message: 'Send a Message',
+    message: 'Free Consultation',
     call: 'Call Us Now',
     booking: 'Book a Call',
     whatsapp: 'Chat on WhatsApp',

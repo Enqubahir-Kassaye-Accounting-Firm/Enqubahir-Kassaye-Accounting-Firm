@@ -20,7 +20,11 @@ const listClass = 'text-text-inverse/80 mt-3 space-y-2 text-sm md:mt-4 md:space-
 const linkClass = 'hover:text-on-primary transition-colors';
 
 const footerLinks = {
-  company: visibleLinks(siteConfig.navigation.desktop).filter((link) => link.href !== '/'),
+  company: [
+    ...visibleLinks(siteConfig.navigation.desktop).filter((link) => link.href !== '/'),
+    // Links the navbar does not carry (e.g. the partners strip)
+    ...visibleLinks(siteConfig.footer.extraLinks),
+  ],
   // Up to six services, each to its own page; hidden with the services section
   services: VISIBLE_HOME_SECTIONS.includes('services')
     ? SERVICES.slice(0, 6).map((service) => ({

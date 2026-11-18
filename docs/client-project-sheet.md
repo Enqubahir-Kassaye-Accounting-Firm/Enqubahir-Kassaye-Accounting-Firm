@@ -11,29 +11,29 @@ finished (`- [x] … — YYYY-MM-DD`) and rewrites Current state.
 ## Current state
 
 - **Stage:** 1. Prepare
-- **Last done:** `client:init` from v1.6.0 — 2026-11-18
-- **Next task:** finish setup and build version 1 (/aksumite-template)
-- **Waiting on:** —
-- **Blockers:** none
+- **Last done:** Version 1 built locally (setup, content, 5 custom items), checks run — 2026-11-18
+- **Next task:** create the empty private GitHub repository and safe-push; then the click-through and Vercel preview (task 4)
+- **Waiting on:** Biniam (GitHub repository link)
+- **Blockers:** none. Tasks 0 and 1 stay unticked: surprise build, no agreement or kickoff yet.
 
 ## Project
 
-| Field                      | Value                             |
-| -------------------------- | --------------------------------- |
-| Client                     |                                   |
-| Client slug                | enqubahir-kassaye-accounting-firm |
-| Package                    |                                   |
-| Template version (tag)     | v1.6.0                            |
-| Deposit paid (date)        |                                   |
-| Group (Telegram/WhatsApp)  |                                   |
-| Decision maker             |                                   |
-| GitHub repository          |                                   |
-| Logins stored at           |                                   |
-| PageSpeed (mobile/desktop) |                                   |
-| Host (Vercel / cPanel)     |                                   |
-| Preview URL                |                                   |
-| Live URL                   |                                   |
-| Final payment (date)       |                                   |
+| Field                      | Value                                        |
+| -------------------------- | -------------------------------------------- |
+| Client                     | Enqubahir Kassaye Authorized Accounting Firm |
+| Client slug                | enqubahir-kassaye-accounting-firm            |
+| Package                    | Digital Presence (surprise build)            |
+| Template version (tag)     | v1.6.0                                       |
+| Deposit paid (date)        |                                              |
+| Group (Telegram/WhatsApp)  |                                              |
+| Decision maker             |                                              |
+| GitHub repository          |                                              |
+| Logins stored at           |                                              |
+| PageSpeed (mobile/desktop) |                                              |
+| Host (Vercel / cPanel)     | Vercel                                       |
+| Preview URL                |                                              |
+| Live URL                   |                                              |
+| Final payment (date)       |                                              |
 
 ## Tasks
 
@@ -45,13 +45,13 @@ first group with an unticked task.
 - [ ] 0. Proposal confirmed in writing or agreement signed; deposit paid; group
      created
 - [ ] 1. Kickoff call done, summary sent; logo and photos received or requested
-- [ ] 2. Brand Guideline done (or `skipped`, which counts as done)
-- [ ] 3. Blueprint done
+- [x] 2. Brand Guideline done (or `skipped`, which counts as done) — 2026-11-18
+- [x] 3. Blueprint done — 2026-11-18
 
 **Stage 2 — Build and review**
 
 - [ ] 4. Version 1 built (`/aksumite-template`), click-through done, preview sent
-- [ ] Custom work below built and ticked (skip if none)
+- [x] Custom work below built and ticked (skip if none) — 2026-11-18
 - [ ] 5. Review call held, Website Review sent
 - [ ] 6. Revisions applied (logged below); client wrote **Approved**; legal
      `reviewed: true`
@@ -68,13 +68,13 @@ first group with an unticked task.
 Version 1, saved as it is built. It is finished only when every line is ticked.
 A ticked line is never generated again, so the client's corrections are safe.
 
-- [ ] Images placed and optimized
-- [ ] `src/config/site.ts` filled
-- [ ] `src/data/` filled
-- [ ] `.env.local` set
-- [ ] Fonts pinned and files formatted
-- [ ] Checks pass
-- [ ] `docs/ask-client.md` saved
+- [x] Images placed and optimized — 2026-11-18
+- [x] `src/config/site.ts` filled — 2026-11-18
+- [x] `src/data/` filled — 2026-11-18
+- [x] `.env.local` set — 2026-11-18
+- [x] Fonts pinned and files formatted — 2026-11-18
+- [x] Checks pass — 2026-11-18
+- [x] `docs/ask-client.md` saved — 2026-11-18
 - [ ] Pushed and reported
 
 ## Messages
@@ -96,7 +96,13 @@ Agreed extra work beyond the package ([`packages.md`](packages.md) → Extra
 work): one line each, with the quote reference, e.g.
 `- [ ] Equipment page + homepage section — quote Q-012`.
 
-None agreed.
+Surprise build: shown to the client on a Vercel link before kickoff, no quote reference.
+
+- [x] Partners strip (homepage band after Services, footer link only) — quote none, surprise build — 2026-11-18
+- [x] Accounting Tips page + homepage section — quote none, surprise build — 2026-11-18
+- [x] Tax Filing Do's & Don'ts page + homepage section — quote none, surprise build — 2026-11-18
+- [x] Useful Websites page + homepage section — quote none, surprise build — 2026-11-18
+- [x] Testimonials carousel (Mekan PLC style) — quote none, surprise build — 2026-11-18
 
 ## Approvals and revisions
 

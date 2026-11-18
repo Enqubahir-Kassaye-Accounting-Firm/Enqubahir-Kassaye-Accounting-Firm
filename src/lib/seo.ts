@@ -10,7 +10,7 @@ import { siteUrl } from '@/config/env';
 
 const trailingSlash = process.env.STATIC_EXPORT === 'true';
 
-/** Absolute URL of a page, e.g. pageUrl('/about') → 'https://example.com/about/' on a static host */
+/** Absolute URL of a page, e.g. pageUrl('/about') → 'https://<your-domain>/about/' on a static host */
 export function pageUrl(path: string): string {
   if (path === '/') return `${siteUrl}/`;
   return `${siteUrl}${path}${trailingSlash ? '/' : ''}`;

@@ -9,6 +9,9 @@ import { SERVICES } from '@/data/services';
 import { FEATURED_PROJECTS } from '@/data/projects';
 import { PARTNERS } from '@/data/partners';
 import { TESTIMONIALS } from '@/data/testimonials';
+import { HOME_ACCOUNTING_TIPS } from '@/data/accounting-tips';
+import { HOME_TAX_DONTS, HOME_TAX_DOS } from '@/data/tax-guide';
+import { HOME_USEFUL_WEBSITES } from '@/data/useful-websites';
 
 /** Sections that depend on data; every other section always has content. */
 const HAS_CONTENT = new Map<HomeSectionId, boolean>([
@@ -16,6 +19,9 @@ const HAS_CONTENT = new Map<HomeSectionId, boolean>([
   ['projects', FEATURED_PROJECTS.length > 0],
   ['partners', PARTNERS.length > 0],
   ['testimonials', TESTIMONIALS.length > 0],
+  ['tax-guide', HOME_TAX_DOS.length + HOME_TAX_DONTS.length > 0],
+  ['tips', HOME_ACCOUNTING_TIPS.length > 0],
+  ['websites', HOME_USEFUL_WEBSITES.length > 0],
 ]);
 
 export const VISIBLE_HOME_SECTIONS = siteConfig.homeSections.filter(

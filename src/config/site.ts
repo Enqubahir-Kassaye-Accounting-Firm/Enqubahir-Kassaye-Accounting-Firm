@@ -43,11 +43,14 @@ export type HomeSectionId =
   | 'services'
   | 'projects'
   | 'partners'
+  | 'tax-guide'
+  | 'tips'
+  | 'websites'
   | 'testimonials'
   | 'contact'
   | 'cta';
 
-interface NavLink {
+export interface NavLink {
   href: string;
   label: string;
   /** Homepage section this link points to; the link hides when that section is hidden. */
@@ -69,9 +72,18 @@ interface NavLink {
 // After changing colors, run `npm run check:contrast`.
 const brand: BrandSettings = {
   preset: 'corporate',
-  colors: {},
+  colors: {
+    primary: '#173F2E',
+    primaryDark: '#0E2A1E',
+    primaryLight: '#2A5A44',
+    accent: '#D9AE55',
+    accentDark: '#8A6618',
+    onAccent: '#1A1608',
+    onPrimary: '#FFFFFF',
+  },
+  // Page, card, border and text colors are the template's neutral ones
   surfaces: { light: {}, dark: {} },
-  fonts: {},
+  fonts: { heading: 'Manrope', body: 'Inter' },
   shape: {},
 };
 
@@ -92,8 +104,10 @@ export const siteConfig = {
     'hero',
     'about',
     'services',
-    'projects',
     'partners',
+    'tax-guide',
+    'tips',
+    'websites',
     'testimonials',
     'contact',
     'cta',
@@ -128,17 +142,16 @@ export const siteConfig = {
   navigation: {
     desktop: [
       { href: '/', label: 'Home' },
-      { href: '/#about', label: 'About', section: 'about' },
-      { href: '/#services', label: 'Services', section: 'services' },
-      { href: '/#projects', label: 'Projects', section: 'projects' },
-      { href: '/#testimonials', label: 'Testimonials', section: 'testimonials' },
-      { href: '/#contact', label: 'Contact', section: 'contact' },
+      { href: '/about', label: 'About' },
+      { href: '/services', label: 'Services', section: 'services' },
+      { href: '/accounting-tips', label: 'Accounting Tips', section: 'tips' },
+      { href: '/tax-filing-dos-and-donts', label: 'Do’s & Don’ts', section: 'tax-guide' },
+      { href: '/useful-websites', label: 'Websites', section: 'websites' },
     ] as NavLink[],
     tablet: [
       { href: '/', label: 'Home' },
-      { href: '/#about', label: 'About', section: 'about' },
-      { href: '/#services', label: 'Services', section: 'services' },
-      { href: '/#projects', label: 'Projects', section: 'projects' },
+      { href: '/about', label: 'About' },
+      { href: '/services', label: 'Services', section: 'services' },
     ] as NavLink[],
     // The header button is the primary conversion action (see `conversion`)
   },
@@ -168,7 +181,7 @@ export const siteConfig = {
   // embedded calendar script. No tool yet: Google Calendar booking page for
   // Gmail users, otherwise Cal.com.
   booking: {
-    url: 'https://cal.com/yourusername',
+    url: '',
   },
 
   // ── Chat Button ─────────────────────────────────────────────────────────────
@@ -177,14 +190,15 @@ export const siteConfig = {
   chat: 'none' as ChatChannel,
 
   // ── Brand Identity ──────────────────────────────────────────────────────────
-  name: 'Brand Name',
-  tagline: 'Your tagline here',
-  description: 'Your company description goes here.',
+  name: 'Enqubahir Kassaye Authorized Accounting Firm',
+  tagline: 'Accounting, tax and audit services in Addis Ababa',
+  description:
+    'An AABE-licensed accounting firm in Bole, Addis Ababa. We keep books, file taxes, carry out audits, prepare IFRS and IPSAS statements, run payroll and help with business registration.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   // Path under public/, e.g. '/logo.png' — used in navbar, footer, icons and
   // structured data. Empty = no logo yet: the name shows as text.
   logo: '',
-  logoAlt: 'Brand Name Logo',
+  logoAlt: 'Enqubahir Kassaye Authorized Accounting Firm logo',
   // Navbar and footer: 'icon' → a square mark in a small box with the name
   // beside it; 'wide' → a wordmark (logo with the name in it) shown alone,
   // 32px high
@@ -193,15 +207,15 @@ export const siteConfig = {
   // the primary color (a dark logo disappears there). Empty = `logo`.
   logoOnPrimary: '',
   // Open Graph locale (e.g. 'en_US', 'am_ET') and <html lang> value
-  locale: 'en_US',
+  locale: 'en_ET',
   language: 'en',
 
   // ── Contact Details ─────────────────────────────────────────────────────────
   contact: {
-    email: 'hello@example.com',
-    phone: '+15555550100', // International format, e.g. '+251911000000'
-    address: '123 Main St, City, Country',
-    officeHours: 'Mon–Fri, 9:00 AM – 5:00 PM',
+    email: 'info@enqubahirkassaye.com',
+    phone: '+251911475606', // International format, e.g. '+251911000000'
+    address: 'Bole Sub-City, 22 Mazoria, Addis Ababa, Ethiopia',
+    officeHours: 'Mon–Fri 8:00 AM – 6:00 PM · Sat 8:00 AM – 12:00 PM · Sun closed',
     // Google Maps → Share → Embed a map → copy only the src="..." URL
     mapEmbedUrl: '',
     // Default country for the phone field in the contact form (ISO code)
@@ -216,11 +230,11 @@ export const siteConfig = {
   // ── Social Links ────────────────────────────────────────────────────────────
   // Leave any value empty to hide it.
   social: {
-    telegram: 'yourusername', // Username only, without @ (also used by chat: 'telegram')
-    whatsapp: '15555550100', // Number without + or spaces, e.g. '251911000000' (also used by chat: 'whatsapp')
-    facebook: 'https://facebook.com/yourusername',
-    instagram: 'https://instagram.com/yourusername',
-    linkedin: 'https://linkedin.com/company/yourusername',
+    telegram: '', // Username only, without @ (also used by chat: 'telegram')
+    whatsapp: '', // Number without + or spaces, e.g. '251911000000' (also used by chat: 'whatsapp')
+    facebook: '',
+    instagram: '',
+    linkedin: '',
     tiktok: '',
     youtube: '',
     x: '',
@@ -238,40 +252,53 @@ export const siteConfig = {
   // "Other" (labels in UI_TEXT.contact.form).
   contactForm: {
     provider: 'web3forms' as ContactFormProvider,
-    formKey: 'REPLACE_ME',
+    formKey: '', // The client's own Web3Forms key arrives at launch; the form stays hidden until then
   },
 
   // ── SEO & Open Graph ────────────────────────────────────────────────────────
   seo: {
-    titleDefault: 'Brand Name | Your Tagline',
-    titleTemplate: '%s | Brand Name',
-    metaDescription: 'Your homepage meta description goes here.',
+    titleDefault: 'Enqubahir Kassaye Accounting Firm | Addis Ababa',
+    titleTemplate: '%s | Enqubahir Kassaye Accounting Firm',
+    metaDescription:
+      'AABE-licensed accounting firm in Bole, Addis Ababa. Bookkeeping, tax filing, audit, IFRS and IPSAS reports and payroll. Book a free consultation.',
     keywords: [] as string[],
     category: 'business',
-    ogTitle: 'Brand Name | Your Tagline',
-    ogDescription: 'Your Open Graph description goes here.',
+    ogTitle: 'Enqubahir Kassaye Accounting Firm | Addis Ababa',
+    ogDescription:
+      'Your books in order. Your taxes filed on time. Accounting, tax and audit services in Addis Ababa.',
     // '/og-default.png' is generated from the logo, name and tagline. For a custom
     // 1200×630 image, put it in public/ and set its path here, e.g. '/og-image.png'.
     ogImage: '/og-default.png',
-    ogImageAlt: 'Brand Name',
+    ogImageAlt: 'Enqubahir Kassaye Authorized Accounting Firm',
   },
 
   // ── JSON-LD Structured Data ─────────────────────────────────────────────────
   schema: {
     // Any schema.org business type, e.g. 'LocalBusiness', 'GeneralContractor', 'ChildCare'
-    type: 'LocalBusiness',
+    type: 'AccountingService',
     alternateName: [] as string[],
-    slogan: '',
-    areaServed: [] as string[],
+    slogan: 'Your books in order. Your taxes filed on time.',
+    areaServed: ['Addis Ababa'] as string[],
     priceRange: '',
-    knowsAbout: [] as string[],
+    knowsAbout: [
+      'Bookkeeping',
+      'Tax filing',
+      'Audit',
+      'IFRS',
+      'IPSAS',
+      'Payroll',
+      'Business advisory',
+    ] as string[],
     availableLanguage: ['English'] as string[],
   },
 
   // ── Footer ──────────────────────────────────────────────────────────────────
   footer: {
-    description: 'Your company description goes here.',
-    copyrightEntity: 'Brand Name',
+    description:
+      'AABE-licensed accounting firm in Bole, Addis Ababa. Bookkeeping, tax filing, audit, financial reporting, payroll and business advice.',
+    copyrightEntity: 'Enqubahir Kassaye Authorized Accounting Firm',
+    // Footer links that are not in the navbar; they hide with their homepage section
+    extraLinks: [{ href: '/#partners', label: 'Our Partners', section: 'partners' }] as NavLink[],
   },
 
   // ── Agency Credit ───────────────────────────────────────────────────────────
@@ -287,10 +314,10 @@ export const siteConfig = {
 
   // ── Legal Pages ─────────────────────────────────────────────────────────────
   legal: {
-    companyFullName: 'Brand Name',
-    jurisdiction: 'your jurisdiction',
-    courtLocation: 'your city, Country',
-    lastUpdated: 'January 2026',
+    companyFullName: 'Enqubahir Kassaye Authorized Accounting Firm',
+    jurisdiction: 'Ethiopia',
+    courtLocation: 'Addis Ababa, Ethiopia',
+    lastUpdated: 'November 2026',
   },
 };
 

@@ -30,6 +30,9 @@ import { PROJECTS, PROJECTS_PAGE } from '../src/data/projects.ts';
 import { TESTIMONIALS } from '../src/data/testimonials.ts';
 import { PARTNERS } from '../src/data/partners.ts';
 import { CONTACT_PAGE } from '../src/data/contact.ts';
+import { ACCOUNTING_TIPS, ACCOUNTING_TIPS_PAGE } from '../src/data/accounting-tips.ts';
+import { TAX_DONTS, TAX_DOS, TAX_GUIDE_PAGE } from '../src/data/tax-guide.ts';
+import { USEFUL_WEBSITES, USEFUL_WEBSITES_PAGE } from '../src/data/useful-websites.ts';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -164,6 +167,31 @@ const contentSchemas = [
   ['testimonials.ts', z.array(z.object({ quote: text, clientName: text })), TESTIMONIALS],
   ['partners.ts', z.array(z.object({ name: text, url: optional(url).optional() })), PARTNERS],
   ['contact.ts', z.object({ title: text, description: text }), CONTACT_PAGE],
+  [
+    'accounting-tips.ts',
+    z.object({
+      page: z.object({ meta: pageMeta, title: text, description: text }),
+      tips: z.array(z.object({ title: text, summary: text, why: text, how: text })),
+    }),
+    { page: ACCOUNTING_TIPS_PAGE, tips: ACCOUNTING_TIPS },
+  ],
+  [
+    'tax-guide.ts',
+    z.object({
+      page: z.object({ meta: pageMeta, title: text, description: text }),
+      dos: z.array(z.object({ title: text, text })),
+      donts: z.array(z.object({ title: text, text })),
+    }),
+    { page: TAX_GUIDE_PAGE, dos: TAX_DOS, donts: TAX_DONTS },
+  ],
+  [
+    'useful-websites.ts',
+    z.object({
+      page: z.object({ meta: pageMeta, title: text, description: text }),
+      websites: z.array(z.object({ name: text, url, description: text })),
+    }),
+    { page: USEFUL_WEBSITES_PAGE, websites: USEFUL_WEBSITES },
+  ],
 ];
 
 const problems = [];
@@ -194,6 +222,16 @@ checkUnique(
   'projects.ts',
   'slug',
   PROJECTS.map((project) => project.slug)
+);
+checkUnique(
+  'accounting-tips.ts',
+  'title',
+  ACCOUNTING_TIPS.map((tip) => tip.title)
+);
+checkUnique(
+  'useful-websites.ts',
+  'url',
+  USEFUL_WEBSITES.map((website) => website.url)
 );
 checkUnique('site.ts', 'homeSections id', siteConfig.homeSections);
 

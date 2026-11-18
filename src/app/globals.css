@@ -283,6 +283,22 @@ select.PhoneInputCountrySelect option {
   animation: glow-pulse 8s ease-in-out infinite;
 }
 
+/* Testimonials carousel: the active selector's bar fills over --carousel-duration,
+   and its end moves to the next testimonial (see testimonials-carousel.tsx) */
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@utility animate-progress-fill {
+  transform-origin: left center;
+  animation: progress-fill var(--carousel-duration, 7s) linear forwards;
+}
+
 /*
  * Scroll reveal: <ScrollReveal> / <StaggerItem> render [data-reveal];
  * <RevealObserver> adds .is-revealed when they enter the viewport.
@@ -338,7 +354,8 @@ select.PhoneInputCountrySelect option {
   .animate-page-enter,
   .animate-drift-a,
   .animate-drift-b,
-  .animate-glow-pulse {
+  .animate-glow-pulse,
+  .animate-progress-fill {
     animation: none;
   }
 }

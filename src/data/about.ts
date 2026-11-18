@@ -7,80 +7,84 @@
 import type { AboutSummary, PageMeta } from '@/types/content';
 
 export const ABOUT_SUMMARY: AboutSummary = {
-  title: 'About Your Organization',
-  summary: 'Your organization summary goes here. Describe what you do and who you serve.',
-  buttonText: 'Discover Our Story',
+  title: 'An accounting firm in Bole, Addis Ababa',
+  summary:
+    'We are AABE-licensed. We keep the books, file the taxes, carry out audits and run payroll for companies, small and medium businesses and non-profits in Addis Ababa.',
+  buttonText: 'About the firm',
 };
 
 export const ABOUT_PAGE_META: PageMeta = {
   title: 'About Us',
-  description: 'Your about page description goes here.',
+  description:
+    'Enqubahir Kassaye Authorized Accounting Firm is an AABE-licensed accounting firm in Bole, Addis Ababa. Bookkeeping, tax filing, audit, financial reporting and payroll.',
 };
 
 export const ABOUT_PAGE_SECTIONS = {
   whoWeAre: {
     sectionLabel: 'Who we are',
-    headline: 'About Your Organization',
-    body: 'Your organization description goes here. Describe who you are, what you do, and what makes you different.',
-    origin: '[Enter your company origin story here.]',
+    headline: 'About Enqubahir Kassaye Authorized Accounting Firm',
+    body: 'An AABE-licensed accounting firm in Bole, Addis Ababa. We keep books, file company income tax, VAT, withholding tax and employee income tax, carry out audits, prepare IFRS and IPSAS statements, run payroll and help with business registration.',
+    origin:
+      'The firm is led by its principal consultant, Enqubahir Kassaye Teferra. Our office is in Bole Sub-City, 22 Mazoria, Addis Ababa.',
   },
 
   whatWeBuild: {
-    sectionLabel: 'What we offer',
-    headline: 'Your headline for this section goes here.',
+    sectionLabel: 'What we do',
+    headline: 'Books, taxes and audit in one office.',
     intro:
-      'Your introductory paragraph goes here. Explain your approach or philosophy in a few sentences.',
+      'Most businesses need the same three things from an accountant. We cover all three, so your figures stay in one place.',
     dimensions: [
       {
         roman: 'I',
-        title: 'Pillar One',
-        body: 'Description of your first pillar or principle goes here.',
+        title: 'Books',
+        body: 'We set up the accounting system and keep the books every month. That includes ledgers, bank reconciliation and monthly financial reports, with payroll kept alongside.',
       },
       {
         roman: 'II',
-        title: 'Pillar Two',
-        body: 'Description of your second pillar or principle goes here.',
+        title: 'Taxes',
+        body: 'We calculate and file company income tax, VAT, withholding tax and employee income tax. We also plan ahead and review past filings.',
       },
       {
         roman: 'III',
-        title: 'Pillar Three',
-        body: 'Description of your third pillar or principle goes here.',
+        title: 'Audit and reports',
+        body: 'We carry out audits in line with AABE requirements and prepare balance sheets, income statements and cash flow statements to IFRS or IPSAS.',
       },
     ],
   },
 
   theRealPurpose: {
-    sectionLabel: 'The real purpose',
-    headline: 'Your purpose headline goes here.',
-    body: 'Your purpose description goes here. Explain the deeper reason behind what you do.',
-    pullQuote: 'Your pull quote or key message goes here.',
-    bodyAfterQuote: 'Your follow-up paragraph goes here.',
+    sectionLabel: 'What you can count on',
+    headline: 'Records that are ready when they are needed.',
+    body: 'Tax dates, audits and bank requests all ask for the same thing: figures that are complete and up to date. Our work is built around that.',
+    pullQuote: 'Books kept every month. Taxes filed on time. Statements ready for audit.',
+    bodyAfterQuote:
+      'If the tax authority assesses your business, our principal consultant, Enqubahir Kassaye Teferra, stands with you during the assessment.',
   },
 
   whatWeBelieve: {
-    sectionLabel: 'What we believe',
-    headline: 'Your beliefs headline goes here.',
-    intro: 'Your introductory paragraph about your beliefs and values goes here.',
+    sectionLabel: 'How we work',
+    headline: 'What you can expect from us.',
+    intro: 'Three habits that run through all of our services.',
     beliefs: [
       {
-        lead: 'Belief one headline.',
-        body: 'Description of your first core belief goes here.',
+        lead: 'Books kept every month.',
+        body: 'Transactions are recorded, accounts are reconciled and a financial report is ready each month, not once a year.',
       },
       {
-        lead: 'Belief two headline.',
-        body: 'Description of your second core belief goes here.',
+        lead: 'Taxes filed on time.',
+        body: 'VAT, withholding tax and employee income tax are calculated, declared and filed every month, on time.',
       },
       {
-        lead: 'Belief three headline.',
-        body: 'Description of your third core belief goes here.',
+        lead: 'Statements ready for audit.',
+        body: 'Records are prepared before the auditor asks for them, and backlog years can be cleared first.',
       },
     ],
   },
 
   whoBuildFor: {
     sectionLabel: 'Who we serve',
-    headline: 'Your ideal client headline goes here.',
-    body: 'Description of who you serve and what problems you solve goes here.',
-    closing: 'Your closing statement goes here.',
+    headline: 'Companies, small businesses and non-profits in Addis Ababa.',
+    body: 'We work with companies, small and medium businesses and non-profits. We also help people who are starting a business and need it registered and licensed.',
+    closing: 'Book a free consultation to talk about your books, taxes or audit.',
   },
 } as const;

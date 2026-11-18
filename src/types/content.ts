@@ -31,6 +31,32 @@ export interface Testimonial {
   quote: string;
   clientName: string;
   company: string;
+  /** Job title, shown before the company (e.g. 'Managing Director') */
+  role?: string;
+  /** Short line pulled from the quote, shown large above it in the carousel */
+  headline?: string;
+}
+
+/** One accounting tip: a short line for the homepage card, why and how for the page */
+export interface AccountingTip {
+  title: string;
+  summary: string;
+  why: string;
+  how: string;
+}
+
+/** One do or don't in the tax filing guide */
+export interface TaxGuidePoint {
+  title: string;
+  text: string;
+}
+
+/** An official website with a short description of what it is for */
+export interface UsefulWebsite {
+  name: string;
+  /** Full link (https://…); each one is opened and checked before it goes in */
+  url: string;
+  description: string;
 }
 
 export interface Partner {
@@ -75,6 +101,12 @@ export interface HomePage {
   partnersTitle: string;
   testimonialsTitle: string;
   testimonialsSubtitle: string;
+  taxGuideTitle: string;
+  taxGuideSubtitle: string;
+  tipsTitle: string;
+  tipsSubtitle: string;
+  websitesTitle: string;
+  websitesSubtitle: string;
   ctaTitle: string;
   ctaSubtitle: string;
   /** CTA buttons follow site.ts → conversion; this link shows when there is no secondary action */
@@ -89,6 +121,16 @@ export interface PageMeta {
 }
 
 export interface ServicesPage {
+  meta: PageMeta;
+  eyebrow: string;
+  title: string;
+  description: string;
+  sectionTitle: string;
+  sectionSubtitle: string;
+}
+
+/** A list page under the header: tips, tax guide, websites */
+export interface ListPage {
   meta: PageMeta;
   eyebrow: string;
   title: string;

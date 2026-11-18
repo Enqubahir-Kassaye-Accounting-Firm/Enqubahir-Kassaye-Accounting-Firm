@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 56" width="150" height="56" role="img" aria-label="Tessera">
+  <title>Tessera</title>
+  <g transform="translate(-10.8,-6.4) scale(0.9)"><rect x="14" y="18" width="20" height="20" fill="#FFFFFF"/><rect x="38" y="18" width="20" height="20" fill="none" stroke="#FFFFFF" stroke-width="5"/><rect x="14" y="42" width="20" height="20" fill="none" stroke="#FFFFFF" stroke-width="5"/><rect x="38" y="42" width="20" height="20" fill="#FFFFFF"/></g>
+  <text x="56" y="37" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Tessera</text>
+</svg>
