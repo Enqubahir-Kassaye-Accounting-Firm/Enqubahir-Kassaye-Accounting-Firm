@@ -245,7 +245,7 @@ function HeroText({
             className={cn(
               'animate-fade-up text-on-primary block font-bold tracking-tight text-balance wrap-break-word hyphens-auto',
               compact
-                ? 'text-[clamp(2.75rem,13.5vw,3.75rem)] leading-[1.04] sm:text-[3.5rem] md:text-[4.25rem] lg:text-[3.25rem] xl:text-6xl 2xl:text-[4.25rem]'
+                ? 'text-[clamp(2.75rem,13.5vw,3.75rem)] leading-[1.04] sm:text-[3.5rem] md:text-[4.25rem] lg:text-[3.25rem] xl:text-6xl 2xl:text-[4.5rem]'
                 : [
                     'text-[clamp(2.75rem,13vw,4rem)] leading-[1.01] sm:text-[4.5rem] sm:leading-[1.05] md:text-[5.5rem] lg:text-[5.75rem] xl:text-[6.25rem] 2xl:text-[6.75rem]',
                     SHORT_SCREEN_TITLE,
@@ -272,7 +272,8 @@ function HeroText({
         className={cn(
           'animate-fade-up mt-2 max-w-xl text-sm leading-relaxed sm:mt-3 sm:text-base md:text-lg lg:text-xl',
           onPhoto ? 'text-on-primary' : compact ? 'text-text-inverse/80' : 'text-text-inverse/65',
-          compact && 'mt-5 text-base sm:mt-6 md:text-lg lg:text-lg xl:text-xl',
+          compact &&
+            'mt-5 text-base sm:mt-6 md:text-lg lg:text-lg xl:text-xl 2xl:mt-7 2xl:max-w-2xl 2xl:text-2xl',
           centered && 'mx-auto'
         )}
       >
@@ -284,7 +285,8 @@ function HeroText({
         style={fadeDelay(homePage.heroTitleLines.length + 1)}
         className={cn(
           'animate-fade-up mt-4 flex w-full flex-col gap-3 sm:mt-5 sm:w-auto sm:flex-row sm:items-center md:mt-7 lg:mt-6 [@media(min-width:768px)_and_(max-height:850px)]:mt-4',
-          compact && 'mt-8 sm:mt-9 md:mt-9 lg:mt-9',
+          compact &&
+            'mt-8 sm:mt-9 md:mt-9 lg:mt-9 lg:flex-col lg:items-start xl:flex-row xl:items-center',
           centered && 'sm:justify-center'
         )}
       >
@@ -292,7 +294,7 @@ function HeroText({
           href={primaryAction.href}
           external={primaryAction.external}
           variant="primary"
-          className="w-full min-w-[160px] text-sm sm:w-auto md:px-8 md:py-4 md:text-base"
+          className="w-full min-w-[160px] text-sm whitespace-nowrap sm:w-auto md:px-8 md:py-4 md:text-base lg:w-72 xl:w-auto"
         >
           {primaryLabel}
         </PremiumButton>
@@ -302,7 +304,7 @@ function HeroText({
             href={secondary.href}
             external={secondary.external}
             variant="secondary"
-            className="w-full min-w-[160px] text-sm sm:w-auto md:px-8 md:py-4 md:text-base"
+            className="w-full min-w-[160px] text-sm whitespace-nowrap sm:w-auto md:px-8 md:py-4 md:text-base lg:w-72 xl:w-auto"
           >
             {secondary.label}
           </PremiumButton>
