@@ -302,7 +302,7 @@ export const siteConfig = {
   footer: {
     description:
       'AABE-licensed accounting firm in Bole, Addis Ababa. Bookkeeping, tax filing, audit, financial reporting, payroll and business advice.',
-    copyrightEntity: 'Enqubahir Kassaye Authorized Accounting Firm',
+    copyrightEntity: 'Enqubahir Kassaye Accounting Firm',
     // Footer links that are not in the navbar; they hide with their homepage section
     extraLinks: [{ href: '/#partners', label: 'Our Partners', section: 'partners' }] as NavLink[],
   },
