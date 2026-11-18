@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 56" width="125" height="56" role="img" aria-label="Sable">
   <title>Sable</title>
-  <g transform="translate(-10.8,-6.4) scale(0.9)"><rect x="14" y="40" width="10" height="22" fill="#FFFFFF"/><rect x="30" y="28" width="10" height="34" fill="#FFFFFF"/><rect x="46" y="16" width="10" height="46" fill="#FFFFFF"/></g>
+  <g transform="translate(-10.8,-6.4) scale(0.9)"><rect x="14" y="40" width="10" height="22" fill="#F9A8D4"/><rect x="30" y="28" width="10" height="34" fill="#F9A8D4"/><rect x="46" y="16" width="10" height="46" fill="#F9A8D4"/></g>
   <text x="56" y="37" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Sable</text>
 </svg>
