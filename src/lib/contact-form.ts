@@ -13,7 +13,10 @@ import { UI_TEXT } from '@/data/ui';
 const { provider, formKey } = siteConfig.contactForm;
 const { validation } = UI_TEXT.contact;
 
-export const isContactFormEnabled = provider !== 'none' && formKey.trim().length > 0;
+/** The form shows unless provider is 'none'. Without a key, sending opens the visitor's email app (see submitContactForm). */
+export const isContactFormEnabled = provider !== 'none';
+
+const hasFormKey = formKey.trim().length > 0;
 
 /** Longest message the form accepts (counter under the message field) */
 export const MESSAGE_MAX_LENGTH = 500;
@@ -47,6 +50,22 @@ export async function submitContactForm(values: ContactFormValues): Promise<void
   if (!isContactFormEnabled) throw new Error('Contact form is not configured');
 
   const subject = `${values.subject} — ${siteConfig.name} website`;
+
+  // No form key yet: open the visitor's email app with the message written,
+  // addressed to the company email. Nothing is lost and no account is needed.
+  if (!hasFormKey) {
+    const to = siteConfig.contact.email;
+    if (!to) throw new Error('No form key and no contact email');
+    const body = [
+      `${UI_TEXT.contact.form.nameLabel}: ${values.name}`,
+      `${UI_TEXT.contact.form.emailLabel}: ${values.email}`,
+      `${UI_TEXT.contact.form.phoneLabel}: ${values.phone}`,
+      '',
+      values.message,
+    ].join('\n');
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return;
+  }
 
   const request =
     provider === 'web3forms'

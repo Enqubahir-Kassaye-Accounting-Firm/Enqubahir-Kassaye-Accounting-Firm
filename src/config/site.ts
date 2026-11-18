@@ -258,7 +258,7 @@ export const siteConfig = {
   // "Other" (labels in UI_TEXT.contact.form).
   contactForm: {
     provider: 'web3forms' as ContactFormProvider,
-    formKey: '', // The client's own Web3Forms key arrives at launch; the form stays hidden until then
+    formKey: '', // The client's own Web3Forms key arrives at launch; until then, sending opens the visitor's email app
   },
 
   // ── SEO & Open Graph ────────────────────────────────────────────────────────

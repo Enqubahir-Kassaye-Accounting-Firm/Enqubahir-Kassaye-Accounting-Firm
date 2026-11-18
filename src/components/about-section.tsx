@@ -24,7 +24,7 @@ export function AboutSection({ about }: AboutSectionProps) {
     <section id="about" className="section-y bg-surface-page relative overflow-hidden">
       {/* Background glow effect matching hero visualization style */}
       <div
-        className="pointer-events-none absolute top-1/2 right-0 h-full w-1/2 -translate-y-1/2"
+        className="pointer-events-none absolute top-1/2 right-0 hidden h-full w-1/2 -translate-y-1/2 lg:block"
         style={{
           background:
             'radial-gradient(circle at 70% 50%, color-mix(in srgb, var(--brand-accent) 5%, transparent), transparent 60%)',

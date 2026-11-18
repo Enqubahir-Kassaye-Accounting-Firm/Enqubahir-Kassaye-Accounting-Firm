@@ -50,7 +50,9 @@ the `senior-website-engineer` skill for implementation work.
   no WhatsApp link; no `contact.mapEmbedUrl` → no map; empty `booking.url` →
   no booking anywhere).
 - `contactForm.provider` is `'web3forms'` (default) | `'formspree'` |
-  `'none'`; `'none'` or an empty `formKey` hides the form. The form posts
+  `'none'`; `'none'` hides the form. With an empty `formKey` the form still
+  shows and sending opens the visitor's email app, addressed to
+  `contact.email` (`src/lib/contact-form.ts`). With a key the form posts
   from the browser to the provider, so it works on static hosts. Subject
   dropdown: "General question", the services from `services.ts`, "Other".
 - `conversion: { primary, secondary }` (`'message'` | `'call'` | `'booking'` |

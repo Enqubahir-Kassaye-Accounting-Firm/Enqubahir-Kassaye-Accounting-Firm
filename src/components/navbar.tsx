@@ -55,7 +55,7 @@ export function Navbar({ links: allNavLinks, tabletLinks: tabletNavLinks }: Navb
         // scrolled frame is costly, and the 95% background hides it anyway
         'site-header fixed top-0 z-50 w-full border-b transition-[background-color,border-color,box-shadow] duration-300',
         scrolled
-          ? 'bg-brand-primary/95 border-on-primary/10 shadow-lg'
+          ? 'bg-brand-primary border-on-primary/10 shadow-lg'
           : 'border-transparent bg-transparent'
       )}
     >
@@ -166,10 +166,7 @@ export function Navbar({ links: allNavLinks, tabletLinks: tabletNavLinks }: Navb
         {mobileMenuOpen && (
           <div
             id="mobile-menu"
-            className={cn(
-              'border-t py-4 backdrop-blur-md md:hidden',
-              'bg-brand-primary/95 border-on-primary/10'
-            )}
+            className={cn('border-t py-4 md:hidden', 'bg-brand-primary border-on-primary/10')}
           >
             <div className="flex flex-col gap-4">
               {allNavLinks.map((link) => (
