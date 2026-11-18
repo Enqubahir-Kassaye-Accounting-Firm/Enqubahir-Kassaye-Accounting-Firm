@@ -21,7 +21,7 @@ Version 1 is a surprise build from public material, shown on a Vercel link befor
 
 ## Drafted text to confirm
 
-- Homepage: the two-line headline, the line under it, the services subtitle, the section titles and subtitles, and the closing call to action.
+- Homepage: the headline "Your books ready before the tax office asks.", the monthly-filing card beside it (illustrative, the last item shown as pending), the services subtitle, the section titles and subtitles, and the closing call to action. The "At a glance" card on About uses Blueprint facts only.
 - About page and homepage summary: written from the Blueprint's facts only. No founding year or history was available, so there is no origin story.
 - Services: the "who it is for" lines, the longer descriptions, the card tags (Monthly, Audit, Tax, Reporting, Payroll, Advisory), the hero lines and the "how to start" text.
 - Accounting Tips: his 10 tips rewritten for Ethiopia (no QuickBooks, credit cards or quarterly US-style tax, and no percentage for tax savings), plus two new ones (finding records for an audit, keeping registration documents together).

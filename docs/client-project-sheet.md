@@ -18,22 +18,22 @@ finished (`- [x] … — YYYY-MM-DD`) and rewrites Current state.
 
 ## Project
 
-| Field                      | Value                                        |
-| -------------------------- | -------------------------------------------- |
-| Client                     | Enqubahir Kassaye Authorized Accounting Firm |
-| Client slug                | enqubahir-kassaye-accounting-firm            |
-| Package                    | Digital Presence (surprise build)            |
-| Template version (tag)     | v1.6.0                                       |
-| Deposit paid (date)        |                                              |
-| Group (Telegram/WhatsApp)  |                                              |
-| Decision maker             |                                              |
-| GitHub repository          |                                              |
-| Logins stored at           |                                              |
-| PageSpeed (mobile/desktop) |                                              |
-| Host (Vercel / cPanel)     | Vercel                                       |
-| Preview URL                |                                              |
-| Live URL                   |                                              |
-| Final payment (date)       |                                              |
+| Field                      | Value                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------- |
+| Client                     | Enqubahir Kassaye Authorized Accounting Firm                                           |
+| Client slug                | enqubahir-kassaye-accounting-firm                                                      |
+| Package                    | Digital Presence (surprise build)                                                      |
+| Template version (tag)     | v1.6.0                                                                                 |
+| Deposit paid (date)        |                                                                                        |
+| Group (Telegram/WhatsApp)  |                                                                                        |
+| Decision maker             |                                                                                        |
+| GitHub repository          | https://github.com/Enqubahir-Kassaye-Accounting-Firm/Enqubahir-Kassaye-Accounting-Firm |
+| Logins stored at           |                                                                                        |
+| PageSpeed (mobile/desktop) |                                                                                        |
+| Host (Vercel / cPanel)     | Vercel                                                                                 |
+| Preview URL                |                                                                                        |
+| Live URL                   |                                                                                        |
+| Final payment (date)       |                                                                                        |
 
 ## Tasks
 
