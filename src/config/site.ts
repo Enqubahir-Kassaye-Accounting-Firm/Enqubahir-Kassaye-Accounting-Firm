@@ -140,8 +140,8 @@ export const siteConfig = {
   // One source of truth for nav links across desktop, tablet, mobile and footer
   // (the footer lists the desktop links except Home).
   navigation: {
+    // The logo links home, so the wide desktop list has no Home link
     desktop: [
-      { href: '/', label: 'Home' },
       { href: '/about', label: 'About' },
       { href: '/services', label: 'Services', section: 'services' },
       { href: '/accounting-tips', label: 'Accounting Tips', section: 'tips' },
@@ -197,7 +197,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   // Path under public/, e.g. '/logo.png' — used in navbar, footer, icons and
   // structured data. Empty = no logo yet: the name shows as text.
-  logo: '',
+  logo: '/logo.png',
   logoAlt: 'Enqubahir Kassaye Authorized Accounting Firm logo',
   // Navbar and footer: 'icon' → a square mark in a small box with the name
   // beside it; 'wide' → a wordmark (logo with the name in it) shown alone,

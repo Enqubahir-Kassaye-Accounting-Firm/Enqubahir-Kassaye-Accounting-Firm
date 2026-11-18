@@ -4,7 +4,7 @@ Version 1 is a surprise build from public material, shown on a Vercel link befor
 
 ## Missing facts
 
-- Logo: send the logo file, or confirm the name set as text stays. Until then the navbar, footer and browser icon use the name (browser icon: first letter).
+- Logo: the logo file Biniam supplied is used (white tile on the green navbar and footer, and as the browser icon). Ask for a transparent PNG or SVG if one exists, and whether the colours should be adapted for the dark green areas.
 - Photos: none yet, so the hero uses the plain green gradient. A landscape photo of the office or the team would allow a photo hero. A portrait of Enqubahir Kassaye Teferra for the About page.
 - AABE registration number (ACF01585): not found on any public register. Confirm before it appears anywhere. It is not on the site now.
 - Second phone number +251 92 430 6904: found only in his company profile. Confirm it, then it is added next to the main number +251 91 147 5606.

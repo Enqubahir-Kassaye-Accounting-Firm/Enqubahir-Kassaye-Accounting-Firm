@@ -6,11 +6,25 @@
 import type { HomePage } from '@/types/content';
 
 export const HOME_PAGE: HomePage = {
-  heroTitleLines: ['Your books in order.', 'Your taxes filed on time.'],
+  // *Starred* words use the accent color
+  heroTitleLines: ['Your books ready *before* the tax office asks.'],
   heroSubtitle: 'Accounting, tax and audit services in Addis Ababa',
   heroPrimaryButtonText: 'Book a free consultation',
   heroSecondaryButtonText: 'Our Services',
   heroSecondaryButtonUrl: '/#services',
+  heroCard: {
+    title: 'Monthly filing',
+    status: 'Handled for you',
+    items: [
+      { label: 'VAT declaration', done: true },
+      { label: 'Withholding tax', done: true },
+      { label: 'Employee income tax', done: true },
+      { label: 'Financial statements (IFRS)', done: false },
+    ],
+    footerPrefix: 'Prepared by',
+    footerName: 'Enqubahir Kassaye Teferra',
+    footerRole: 'Principal Consultant',
+  },
 
   servicesTitle: 'Our Services',
   servicesSubtitle:

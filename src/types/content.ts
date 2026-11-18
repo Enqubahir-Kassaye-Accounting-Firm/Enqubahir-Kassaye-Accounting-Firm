@@ -85,6 +85,16 @@ export interface Service {
   ctaText: string;
 }
 
+/** The card beside the hero title: a short checklist of what the firm handles */
+export interface HeroCardContent {
+  title: string;
+  status: string;
+  items: { label: string; done: boolean }[];
+  footerPrefix: string;
+  footerName: string;
+  footerRole: string;
+}
+
 export interface HomePage {
   /** 1 to 3 lines; each line is shown on its own row */
   heroTitleLines: [string] | [string, string] | [string, string, string];
@@ -94,6 +104,8 @@ export interface HomePage {
   /** The hero's second button, always this link (e.g. 'Our Services' → '/#services') */
   heroSecondaryButtonText: string;
   heroSecondaryButtonUrl: string;
+  /** Optional card to the right of the hero text (below it on phones); leave out for text only */
+  heroCard?: HeroCardContent;
   servicesTitle: string;
   servicesSubtitle: string;
   projectsTitle: string;
@@ -144,10 +156,20 @@ export interface ProjectsPage {
   title: string;
 }
 
+/** One row of the "at a glance" card beside the homepage About text */
+export interface AboutFact {
+  icon: ServiceIconName;
+  label: string;
+  value: string;
+}
+
 export interface AboutSummary {
   title: string;
   summary: string;
   buttonText: string;
+  /** Optional card to the right of the text (below it on phones); leave out for text only */
+  factsTitle?: string;
+  facts?: AboutFact[];
 }
 
 /** When a conditional legal paragraph shows (see src/data/legal.ts) */

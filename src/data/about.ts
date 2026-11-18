@@ -11,6 +11,17 @@ export const ABOUT_SUMMARY: AboutSummary = {
   summary:
     'We are AABE-licensed. We keep the books, file the taxes, carry out audits and run payroll for companies, small and medium businesses and non-profits in Addis Ababa.',
   buttonText: 'About the firm',
+  factsTitle: 'At a glance',
+  facts: [
+    { icon: 'badge', label: 'Licence', value: 'Licensed by AABE' },
+    { icon: 'person', label: 'Principal consultant', value: 'Enqubahir Kassaye Teferra' },
+    {
+      icon: 'users',
+      label: 'Who we serve',
+      value: 'Companies, small and medium businesses and non-profits',
+    },
+    { icon: 'pin', label: 'Office', value: 'Bole Sub-City, 22 Mazoria, Addis Ababa' },
+  ],
 };
 
 export const ABOUT_PAGE_META: PageMeta = {

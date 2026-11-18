@@ -5,6 +5,7 @@
  */
 
 import {
+  BadgeCheck,
   BarChart3,
   Briefcase,
   Camera,
@@ -18,12 +19,14 @@ import {
   House,
   Layers,
   Leaf,
+  MapPin,
   Megaphone,
   Palette,
   Scale,
   Server,
   ShieldCheck,
   Truck,
+  UserRound,
   Users,
   Utensils,
   Globe,
@@ -33,6 +36,7 @@ import {
 } from 'lucide-react';
 
 export const SERVICE_ICONS = {
+  badge: BadgeCheck,
   briefcase: Briefcase,
   camera: Camera,
   car: Car,
@@ -49,6 +53,8 @@ export const SERVICE_ICONS = {
   leaf: Leaf,
   legal: Scale,
   megaphone: Megaphone,
+  person: UserRound,
+  pin: MapPin,
   palette: Palette,
   server: Server,
   shield: ShieldCheck,

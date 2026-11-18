@@ -14,6 +14,7 @@ import { preload } from 'react-dom';
 import { AnimatedGradientBackground } from '@/components/animated-gradient-background';
 import { PremiumButton } from '@/components/premium-button';
 import { Container } from '@/components/container';
+import { HeroCard } from '@/components/hero-card';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { primaryAction } from '@/lib/conversion';
@@ -59,8 +60,20 @@ function GradientHero({ homePage }: HeroProps) {
       <Container className="relative z-10">
         <div className="flex min-h-[100svh] flex-col pt-16 md:pt-12 lg:pt-16 [@media(min-width:768px)_and_(max-height:850px)]:h-auto [@media(min-width:768px)_and_(max-height:850px)]:min-h-0">
           <div className="mt-3 flex flex-1 items-start md:mt-0 md:items-center">
-            <div className="grid w-full grid-cols-1 items-start gap-3 lg:grid-cols-2 lg:gap-5">
-              <HeroText homePage={homePage} className="lg:pt-1" />
+            <div
+              className={cn(
+                'grid w-full grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-5',
+                homePage.heroCard ? 'items-center gap-10 py-10 lg:gap-12' : 'items-start'
+              )}
+            >
+              <HeroText
+                homePage={homePage}
+                compact={Boolean(homePage.heroCard)}
+                className="lg:pt-1"
+              />
+              {homePage.heroCard && (
+                <HeroCard card={homePage.heroCard} step={homePage.heroTitleLines.length + 2} />
+              )}
             </div>
           </div>
         </div>
@@ -171,8 +184,15 @@ function HeroText({
   homePage,
   centered = false,
   onPhoto = false,
+  compact = false,
   className,
-}: HeroProps & { centered?: boolean; onPhoto?: boolean; className?: string }) {
+}: HeroProps & {
+  centered?: boolean;
+  onPhoto?: boolean;
+  /** Smaller title, for a hero that shares the row with a card */
+  compact?: boolean;
+  className?: string;
+}) {
   // Main button: site.ts → conversion.primary, with the hero's own label when
   // set. Second button: always the hero's own link (e.g. Our Services).
   const primaryLabel = homePage.heroPrimaryButtonText || primaryAction.label;
@@ -196,8 +216,13 @@ function HeroText({
           <span
             key={index}
             className={cn(
-              'animate-fade-up text-on-primary block text-[clamp(2.75rem,13vw,4rem)] leading-[1.01] font-bold tracking-tight text-balance wrap-break-word hyphens-auto sm:text-[4.5rem] sm:leading-[1.05] md:text-[5.5rem] lg:text-[5.75rem] xl:text-[6.25rem] 2xl:text-[6.75rem]',
-              SHORT_SCREEN_TITLE,
+              'animate-fade-up text-on-primary block font-bold tracking-tight text-balance wrap-break-word hyphens-auto',
+              compact
+                ? 'text-[clamp(2.25rem,10vw,3rem)] leading-[1.08] sm:text-5xl md:text-[3.5rem] lg:text-[3.25rem] xl:text-6xl 2xl:text-[4.25rem]'
+                : [
+                    'text-[clamp(2.75rem,13vw,4rem)] leading-[1.01] sm:text-[4.5rem] sm:leading-[1.05] md:text-[5.5rem] lg:text-[5.75rem] xl:text-[6.25rem] 2xl:text-[6.75rem]',
+                    SHORT_SCREEN_TITLE,
+                  ],
               index > 0 && 'mt-1.5'
             )}
             style={
@@ -208,7 +233,7 @@ function HeroText({
               } as CSSProperties
             }
           >
-            {line}
+            <AccentText text={line} />
           </span>
         ))}
       </h1>
@@ -255,6 +280,19 @@ function HeroText({
         )}
       </div>
     </div>
+  );
+}
+
+/** A title line where *starred* words use the accent color */
+function AccentText({ text }: { text: string }) {
+  return text.split(/(\*[^*]+\*)/).map((part, index) =>
+    part.startsWith('*') && part.endsWith('*') ? (
+      <span key={index} className="text-brand-accent">
+        {part.slice(1, -1)}
+      </span>
+    ) : (
+      part
+    )
   );
 }
 

@@ -29,13 +29,14 @@ export function SiteLogo({ nameClassName }: { nameClassName?: string }) {
 
   return (
     <>
-      <div className="border-brand-accent/60 bg-on-primary/10 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border">
+      {/* A light tile, so a dark logo stays visible on the primary color */}
+      <div className="bg-on-primary flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg">
         <Image
           src={src}
           alt={siteConfig.logoAlt}
-          width={24}
-          height={24}
-          className="h-6 w-auto object-contain"
+          width={40}
+          height={40}
+          className="h-full w-full object-contain"
         />
       </div>
       <span className={nameClassName}>{siteConfig.name}</span>

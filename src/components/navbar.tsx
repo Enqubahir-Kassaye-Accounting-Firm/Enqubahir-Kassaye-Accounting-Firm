@@ -66,15 +66,15 @@ export function Navbar({ links: allNavLinks, tabletLinks: tabletNavLinks }: Navb
             href="/"
             title={siteConfig.name}
             className={cn(
-              'flex min-w-0 items-center gap-2 text-xl font-bold transition-colors',
+              'flex min-w-0 items-center gap-2.5 text-sm font-bold transition-colors lg:text-lg',
               'hover:text-brand-accent-text text-on-primary'
             )}
           >
-            <SiteLogo nameClassName="truncate" />
+            <SiteLogo nameClassName="line-clamp-2 leading-tight lg:leading-normal" />
           </Link>
 
           {/* Desktop Navigation - lg and up */}
-          <div className="hidden shrink-0 lg:flex lg:items-center lg:gap-6">
+          <div className="hidden shrink-0 xl:flex xl:items-center xl:gap-6">
             {allNavLinks.map((link) => (
               <Link
                 key={link.href}
@@ -108,7 +108,7 @@ export function Navbar({ links: allNavLinks, tabletLinks: tabletNavLinks }: Navb
           </div>
 
           {/* Tablet Navigation - md only (no Contact) */}
-          <div className="hidden shrink-0 md:flex md:items-center md:gap-5 lg:hidden">
+          <div className="hidden shrink-0 md:flex md:items-center md:gap-5 xl:hidden">
             {tabletNavLinks.map((link) => (
               <Link
                 key={link.href}
